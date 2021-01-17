@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -11,13 +12,9 @@ const useStyles = makeStyles((theme: Theme) =>
       height: "100vh",
       zIndex: -1,
     },
-    bgText: {
-      margin: 0,
-      fontSize: "2rem",
-      lineHeight: "3rem",
+    gridContainer: {
       textAlign: "center",
       paddingTop: "40vh",
-      textShadow: "1px 1px 1px #3c5c5e",
     },
   })
 );
@@ -37,7 +34,19 @@ export default function ActualHome() {
         />
       </div>
 
-      <p className={classes.bgText}>Happy Birthday Suhas!</p>
+      <Grid
+        className={classes.gridContainer}
+        container
+        spacing={2}
+        justify="center"
+      >
+        <Grid item xs={12}>
+          Happy birthday Suhas!
+        </Grid>
+        <Grid item>One</Grid>
+        <Grid item>Two</Grid>
+        <Grid item>Three</Grid>
+      </Grid>
     </div>
   );
 }
