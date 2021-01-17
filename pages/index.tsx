@@ -16,12 +16,14 @@ export default function Home() {
 
       <main className={styles.main}>
         <Link href="/home">
-          <Image
-            src="/images/suhas_ugly.jpeg"
-            alt="Ugly Suhas"
-            height="831"
-            width="1280"
-          />
+          <a>
+            <Image
+              src="/images/suhas_ugly.jpeg"
+              alt="Ugly Suhas"
+              height="831"
+              width="1280"
+            />
+          </a>
         </Link>
       </main>
     </div>

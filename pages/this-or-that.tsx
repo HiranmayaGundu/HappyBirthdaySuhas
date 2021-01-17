@@ -66,12 +66,12 @@ export default function ThisOrThat() {
       {gameIndex < GameConfig.length ? (
         <Grid
           container
-          spacing={4}
+          spacing={3}
           justify="center"
           alignItems="center"
           className={styles.gridContainer}
         >
-          <Grid item>
+          <Grid item xs>
             <MediaCard
               title={GameConfig[gameIndex].leftTitle}
               image={`/images/${GameConfig[gameIndex].leftImage}`}
@@ -82,12 +82,12 @@ export default function ThisOrThat() {
               }}
             />
           </Grid>
-          <Grid item>
+          <Grid item xs>
             <Typography variant="h6" color="textPrimary" gutterBottom>
               {GameConfig[gameIndex].centerText}
             </Typography>
           </Grid>
-          <Grid item>
+          <Grid item xs>
             <MediaCard
               title={GameConfig[gameIndex].rightTitle}
               image={`/images/${GameConfig[gameIndex].rightImage}`}
@@ -114,18 +114,24 @@ export default function ThisOrThat() {
                   <TableRow>
                     <TableCell style={{ minWidth: 300 }}>Option 1</TableCell>
                     <TableCell style={{ minWidth: 300 }}>Option 2</TableCell>
-                    <TableCell style={{ minWidth: 300 }}>Result</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {GameConfig.map((gameItem, index) => (
                     <TableRow key={gameItem.leftTitle}>
-                      <TableCell>{gameItem.leftTitle}</TableCell>
-                      <TableCell>{gameItem.rightTitle}</TableCell>
                       <TableCell>
-                        {selectedItems[index] === 0
-                          ? gameItem.leftTitle
-                          : gameItem.rightTitle}
+                        {selectedItems[index] === 0 ? (
+                          <strong>{gameItem.leftTitle}</strong>
+                        ) : (
+                          <>{gameItem.leftTitle}</>
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {selectedItems[index] === 1 ? (
+                          <strong>{gameItem.leftTitle}</strong>
+                        ) : (
+                          <>{gameItem.leftTitle}</>
+                        )}
                       </TableCell>
                     </TableRow>
                   ))}
