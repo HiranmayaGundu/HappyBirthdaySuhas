@@ -6,6 +6,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import HowsYourMemoryCard from "../components/hows-your-memory-card";
 import { useRouter } from "next/dist/client/router";
 import ClientOnly from "../components/client-only";
+import { Box } from "@material-ui/core";
 
 type GameConfigItemType = {
   image: string;
@@ -136,17 +137,11 @@ export default function HowsYourMemory() {
   return (
     <>
       <AppBar />
-      <Typography
-        variant="h2"
-        align="center"
-        className={styles.header}
-        gutterBottom
-      >
-        How's your memory?
-      </Typography>
-      <Grid container spacing={4} justify="center">
-        <Grid item>{content}</Grid>
-      </Grid>
+      <Box m={2}>
+        <Grid container spacing={4} justify="center">
+          <Grid item>{content}</Grid>
+        </Grid>
+      </Box>
       )
     </>
   );

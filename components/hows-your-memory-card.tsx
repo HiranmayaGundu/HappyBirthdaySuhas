@@ -10,11 +10,11 @@ import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 500,
+    maxWidth: 800,
   },
   media: {
-    height: 500,
-    width: 500,
+    height: 600,
+    width: 800,
   },
   alignCenter: {
     textAlign: "center",
