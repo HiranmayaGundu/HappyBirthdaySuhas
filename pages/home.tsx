@@ -56,17 +56,23 @@ export default function ActualHome() {
         </Grid>
         <Grid item>
           <Link href="/this-or-that">
-            <MiniGameCard>This or That ❓</MiniGameCard>
+            <a>
+              <MiniGameCard>This or That ❓</MiniGameCard>
+            </a>
           </Link>
         </Grid>
         <Grid item>
           <Link href="/hows-your-memory">
-            <MiniGameCard>How's your memory? 🕵️</MiniGameCard>
+            <a>
+              <MiniGameCard>How's your memory? 🕵️</MiniGameCard>
+            </a>
           </Link>
         </Grid>
         <Grid item>
           <Link href="/its-your-birthday">
-            <MiniGameCard>It's your birthday! 🥳</MiniGameCard>
+            <a>
+              <MiniGameCard>It's your birthday! 🥳</MiniGameCard>
+            </a>
           </Link>
         </Grid>
       </Grid>
