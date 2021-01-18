@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AppBar from "../components/app-bar";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import MediaCard from "../components/this-or-that-card";
@@ -63,6 +64,7 @@ export default function ThisOrThat() {
   const styles = useStyles();
   return (
     <>
+      <AppBar />
       {gameIndex < GameConfig.length ? (
         <Grid
           container
@@ -102,7 +104,7 @@ export default function ThisOrThat() {
       ) : (
         <Box
           width="100vw"
-          height="100vh"
+          height="80vh"
           display="flex"
           alignItems="center"
           justifyContent="center"
