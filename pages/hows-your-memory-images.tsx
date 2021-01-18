@@ -73,6 +73,7 @@ export default function ImageGridList({ images }: ImageGridList) {
               alt={selectedImage.path.split(".")[0]}
               height={selectedImage.dimensions.height}
               width={selectedImage.dimensions.width}
+              quality={100}
             />
           )}
         </DialogContent>
