@@ -111,5 +111,5 @@ function cleanString(str: string) {
   return str
     .trim()
     .toLocaleLowerCase("en")
-    .replaceAll(/[^a-z]/g, "");
+    .replace(/[^a-z]/g, "");
 }
