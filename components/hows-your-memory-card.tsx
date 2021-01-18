@@ -10,11 +10,11 @@ import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 500,
+    maxWidth: 800,
   },
   media: {
-    height: 500,
-    width: 500,
+    height: 600,
+    width: 800,
   },
   alignCenter: {
     textAlign: "center",
@@ -38,6 +38,17 @@ type HowsYourMemoryCardProps = {
   onClickNext: MouseEventHandler<HTMLButtonElement>;
 };
 
+function useStickyState(defaultValue: string, key: string) {
+  const [value, setValue] = useState(() => {
+    const stickyValue = window.localStorage.getItem(key);
+    return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
+  });
+  useEffect(() => {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+  return [value, setValue];
+}
+
 export default function HowsYourMemoryCard({
   image,
   correctResponse,
@@ -47,7 +58,7 @@ export default function HowsYourMemoryCard({
   const classes = useStyles();
   const maxBlur = _maxBlur == null ? 35 : _maxBlur;
 
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useStickyState("", correctResponse);
   const isResponseCorrect = isResponseValid(response, correctResponse);
 
   const [_blur, setBlur] = useState(maxBlur);
@@ -55,7 +66,6 @@ export default function HowsYourMemoryCard({
 
   useEffect(() => {
     // Reset the response text on props change.
-    setResponse("");
     setBlur(maxBlur);
   }, [image, correctResponse, maxBlur]);
 
@@ -83,6 +93,7 @@ export default function HowsYourMemoryCard({
               disabled={isResponseCorrect}
               className={classes.correctResponse}
               onChange={(e) => setResponse(e.target.value)}
+              key={correctResponse}
             />
           </form>
         </CardContent>
@@ -93,6 +104,7 @@ export default function HowsYourMemoryCard({
             disabled={!isResponseCorrect}
             color="primary"
             onClick={onClickNext}
+            type="button"
           >
             Next
           </Button>
