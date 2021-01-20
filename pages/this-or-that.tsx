@@ -40,19 +40,42 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const GameConfig: GameConfigItemType[] = [
   {
-    leftImage: "mountains_placehoder.jpg",
+    leftImage: "this_or_that/poop_emoji.webp",
     leftTitle: "Chocolate that looks like shit",
     centerText:
-      "Chocolate that looks like shit or shit that looks like chocloate",
-    rightImage: "suhas_ugly.jpeg",
+      "Chocolate that looks like shit or shit that looks like chocolate",
+    rightImage: "this_or_that/chocolate_cake.jpeg",
     rightTitle: "Shit that looks like chocolate",
   },
   {
-    leftImage: "mountains_placehoder.jpg",
+    leftImage: "this_or_that/shower.jpg",
     leftTitle: "You can only shower once a week",
-    centerText: "Shower or brush? ",
-    rightImage: "suhas_ugly.jpeg",
+    centerText: "Shower or brush?",
+    rightImage: "this_or_that/tootbrush.png",
     rightTitle: "You can only brush your teeth once a week",
+  },
+  {
+    leftImage: "this_or_that/Warner.jpg",
+    leftTitle: "Lunch with David Warner",
+    centerText: "Lunch with David Warner or Dinner with Michael Scott?",
+    rightImage: "this_or_that/ms.jpg",
+    rightTitle: "Dinner with Michael Scott",
+  },
+  {
+    leftImage: "this_or_that/fw.jpg",
+    leftTitle: "Free Wifi forever and no food",
+    centerText:
+      "Free Wifi forever and no food or Free stock of food forever and no Wifi for a month?",
+    rightImage: "this_or_that/mat.jfif",
+    rightTitle: "Free stock of food forever and no Wifi for a month",
+  },
+  {
+    leftImage: "this_or_that/female.jfif",
+    leftTitle: "Date someone you love",
+    centerText:
+      "Would you rather date someone you love or date someone who loves you?",
+    rightImage: "suhas_ugly.jpeg",
+    rightTitle: "Date someone who loves you",
   },
 ];
 
@@ -130,9 +153,9 @@ export default function ThisOrThat() {
                       </TableCell>
                       <TableCell>
                         {selectedItems[index] === 1 ? (
-                          <strong>{gameItem.leftTitle}</strong>
+                          <strong>{gameItem.rightTitle}</strong>
                         ) : (
-                          <>{gameItem.leftTitle}</>
+                          <>{gameItem.rightTitle}</>
                         )}
                       </TableCell>
                     </TableRow>
